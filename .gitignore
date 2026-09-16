@@ -399,3 +399,30 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# ==============================
+# E-commerce Big Data Project
+# ==============================
+
+# Large datasets
+*.csv
+*.zip
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Generated analysis outputs
+*.tmp
+*.temp
+
+# Local Hadoop files
+hadoop-local/
