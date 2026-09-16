@@ -1,0 +1,6 @@
+big data is important
+data is valuable
+big companies use data
+hadoop stores data in hdfs
+mapreduce processes big data
+spark can also process big data
