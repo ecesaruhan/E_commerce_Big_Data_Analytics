@@ -2,9 +2,9 @@
 
 ## Big Data Analytics Project
 
-This project applies Big Data technologies to analyse large-scale e-commerce user behaviour. The project focuses on understanding customer interactions, purchasing behaviour and product performance using the Hadoop ecosystem and Apache Spark.
+This project applies Big Data technologies to analyse large-scale e-commerce user behaviour. The project focuses on customer interactions, purchasing behaviour, product performance and purchase patterns using the Hadoop ecosystem and Apache Spark.
 
-The project is developed as part of the MSc Data Analytics – Big Data Analytics module.
+The project was developed as part of the MSc Data Analytics – Big Data Analytics module.
 
 ---
 
@@ -12,23 +12,31 @@ The project is developed as part of the MSc Data Analytics – Big Data Analytic
 
 The purpose of this project is to demonstrate how Big Data concepts and distributed processing technologies can be applied to a real-world e-commerce business problem.
 
-The project uses a large-scale e-commerce behavioural dataset containing customer interaction events from a multi-category online store. The data includes product views, cart activity and purchases.
+The project uses a large-scale e-commerce behavioural dataset from a multi-category online store. The dataset contains customer interaction events including product views, cart activity and purchases.
 
-The project will use Hadoop HDFS for distributed storage, YARN for resource management and Apache Spark for distributed processing and analytics.
+The project uses:
 
-The analytical results will be visualised and interpreted from a business perspective.
+- Hadoop HDFS for distributed storage
+- YARN for resource management
+- Hadoop MapReduce for distributed processing
+- Apache Spark for distributed data processing and analytics
+- Spark MLlib for a simple machine learning task
+- Python for analysis and visualisation
+- GitHub for project documentation and source code management
 
-The overall project workflow is:
+The overall workflow is:
 
 Dataset
 ↓
 HDFS
 ↓
-YARN
+Hadoop MapReduce
 ↓
-Spark Distributed Processing
+Apache Spark
 ↓
 Data Analysis
+↓
+Machine Learning
 ↓
 Visualisation
 ↓
@@ -48,36 +56,15 @@ The business problem addressed in this project is:
 
 **How can a large-scale e-commerce company analyse customer interaction data to understand the relationship between product views, cart activity and purchases, and use these insights to support business decision-making?**
 
-The project focuses on understanding customer behaviour throughout the e-commerce interaction process, from product interaction to completed purchase.
+The project focuses on the customer interaction process from product interaction to completed purchase.
 
 The main research questions are:
 
 1. How does customer activity vary between product views, cart activity and purchases?
 2. Which product categories and products receive high levels of customer interaction and purchases?
-3. What is the relationship between product interactions and completed purchases?
+3. What is the relationship between cart activity and completed purchases?
 4. How does e-commerce activity change over time during October 2019?
-
-The results will be used to identify meaningful behavioural patterns and develop evidence-based business recommendations.
-
----
-
-## 2.2 Why Big Data?
-
-The selected problem is suitable for a Big Data approach because the dataset contains 42,448,764 e-commerce interaction events and has a file size of approximately 5.67 GB.
-
-Processing data at this scale can create challenges for traditional single-machine approaches in terms of storage, processing and scalability.
-
-A distributed Big Data architecture can address these challenges by distributing data storage and processing across the Hadoop ecosystem.
-
-In this project, Hadoop HDFS will be used for distributed storage, YARN will support resource management and Apache Spark will be used for distributed processing and analytics.
-
-The suitability of the problem will be considered using the five key characteristics of Big Data:
-
-- Volume
-- Velocity
-- Variety
-- Veracity
-- Value
+5. Can customer-level behavioural features be used to identify users associated with purchase activity?
 
 ---
 
@@ -85,90 +72,88 @@ The suitability of the problem will be considered using the five key characteris
 
 The project considers a large e-commerce company that collects behavioural data from customers interacting with an online store.
 
-The analysis focuses on the customer interaction process, including product views, cart activity and completed purchases.
+The analysis focuses on:
 
-The main stakeholders that may benefit from the analysis include:
+- Product views
+- Cart activity
+- Purchases
+- Product categories
+- Product performance
+- Customer interaction patterns
+- Activity over time
 
-- marketing teams;
-- sales and commercial teams;
-- product managers;
-- category managers; and
-- business decision-makers.
+Potential stakeholders who may benefit from the analysis include:
 
-The expected business value is to transform large-scale customer interaction data into useful information that can support decisions related to products, customer engagement, marketing and sales.
+- Marketing teams
+- Sales and commercial teams
+- Product managers
+- Category managers
+- Business decision-makers
 
-The final recommendations will be based on evidence obtained from the distributed analysis.
-
----
-
-## 3.1 Expected Business Value
-
-The project aims to provide business value by identifying patterns in customer interactions and purchasing behaviour.
-
-The analysis may help an e-commerce business to:
-
-- understand customer engagement with products;
-- identify products and categories with high levels of activity;
-- investigate the relationship between product views, cart activity and purchases;
-- identify purchasing trends over time; and
-- support evidence-based marketing and product decisions.
-
-The recommendations will be based on the results obtained from the data analysis rather than assumptions.
+The expected business value is to transform large-scale customer interaction data into useful information that can support decisions related to product performance, customer engagement, marketing and sales.
 
 ---
 
-## 3.2 Ethical and Data Governance Considerations
+# 4. Why Big Data?
 
-The dataset contains identifier fields such as `user_id` and `user_session`, which represent user activity within the e-commerce environment.
+The selected dataset contains:
 
-The project will not attempt to identify individual users.
+- 42,448,764 e-commerce interaction events
+- Approximately 5.67 GB of raw CSV data
+- 3,022,290 unique users
+- 166,794 unique products
+- 624 unique categories
 
-User-level identifiers will only be used where necessary for analytical purposes, and findings will mainly be presented in aggregated form.
+Processing a dataset of this scale can create challenges for traditional single-machine approaches in terms of storage, processing time and scalability.
 
-The project will also consider data quality issues, including missing values in `category_code`, `brand` and `user_session`.
+A distributed Big Data architecture allows storage and processing to be distributed across the Hadoop and Spark ecosystem.
 
-The dataset will be used only for the purposes of this academic project, and unnecessary identifying information will not be disclosed in the report.
+In this project:
 
----
-
-# 4. Five Vs of Big Data
-
-## 4.1 Volume
-
-The selected October 2019 dataset contains:
-
-- 42,448,764 records;
-- approximately 5.67 GB of data;
-- 3,022,290 unique users;
-- 166,794 unique products; and
-- 624 unique categories.
-
-The dataset is significantly larger than the minimum size required by the assignment for demonstrating HDFS storage using a 128 MB block size.
-
-The actual HDFS block distribution will be verified during the data ingestion stage.
+- HDFS provides distributed storage.
+- YARN provides cluster resource management.
+- Hadoop MapReduce demonstrates distributed batch processing.
+- Apache Spark provides distributed analytics.
+- Spark MLlib is used for a simple classification task.
 
 ---
 
-## 4.2 Velocity
+# 5. Five Vs of Big Data
+
+## 5.1 Volume
+
+The October 2019 dataset contains 42,448,764 records and has a raw file size of approximately 5.67 GB.
+
+The dataset also contains:
+
+- 3,022,290 unique users
+- 166,794 unique products
+- 624 unique categories
+
+The dataset is sufficiently large to demonstrate distributed storage and processing using HDFS and Spark.
+
+---
+
+## 5.2 Velocity
 
 The dataset contains timestamped e-commerce events recorded throughout October 2019.
 
 The `event_time` variable allows customer activity to be analysed over time.
 
-The dataset is historical rather than real-time, therefore velocity will be considered in terms of the frequency and temporal distribution of recorded e-commerce events rather than live data streaming.
+The dataset is historical rather than real-time. Therefore, velocity is considered through the temporal distribution and frequency of recorded events rather than live streaming.
 
 ---
 
-## 4.3 Variety
+## 5.3 Variety
 
 The dataset contains nine variables representing different types of information.
 
 These include:
 
-- timestamp data;
-- categorical data;
-- numerical data; and
-- identifier fields.
+- Timestamp data
+- Categorical data
+- Numerical data
+- Identifier fields
 
 The main variables are:
 
@@ -182,43 +167,39 @@ The main variables are:
 - `user_id`
 - `user_session`
 
-This combination allows different aspects of customer, product and purchasing behaviour to be analysed.
-
 ---
 
-## 4.4 Veracity
+## 5.4 Veracity
 
 The dataset contains missing values in several variables.
 
-The data quality analysis identified:
+The identified missing values include:
 
-| Variable | Missing values |
+| Variable | Missing Values |
 |---|---:|
 | `category_code` | 13,515,609 |
 | `brand` | 6,113,008 |
 | `user_session` | 2 |
 
-These missing values will be considered during data preprocessing and analysis.
-
-The presence of missing values means that data quality must be considered when interpreting results involving product categories, brands and user sessions.
+These data quality issues are considered when interpreting results involving product categories, brands and user sessions.
 
 ---
 
-## 4.5 Value
+## 5.5 Value
 
 The dataset provides business value because it contains information about customer interactions and purchasing behaviour.
 
-The event data provides an opportunity to analyse the customer interaction process:
+The analysis investigates the customer interaction process:
 
 **Product View → Cart Activity → Purchase**
 
-The analysis will investigate how customer activity is distributed across these stages and how the results can support business decision-making.
+The results can help identify behavioural patterns, product performance and purchase-related activity that may support business decision-making.
 
 ---
 
-# 5. Dataset
+# 6. Dataset
 
-## 5.1 Dataset Source
+## 6.1 Dataset Source
 
 The project uses the:
 
@@ -228,23 +209,21 @@ Dataset source:
 
 **Kaggle**
 
-The project uses the October 2019 dataset:
+The selected file is:
 
 `2019-Oct.csv`
 
 The dataset contains large-scale e-commerce behavioural events collected from a multi-category online store.
 
-The original dataset is not stored in the GitHub repository because of its large file size.
+Due to its large size, the original CSV file is not stored in the GitHub repository.
 
-The dataset can be obtained from the original Kaggle source and placed locally in the project's `data/` directory.
+The dataset should be downloaded from the original Kaggle source and placed locally in the project's `data/` directory.
 
 ---
 
-## 5.2 Dataset Characteristics
+## 6.2 Dataset Characteristics
 
-The October 2019 dataset contains:
-
-| Dataset characteristic | Value |
+| Characteristic | Value |
 |---|---:|
 | File | `2019-Oct.csv` |
 | File size | Approximately 5.67 GB |
@@ -257,18 +236,16 @@ The October 2019 dataset contains:
 
 The dataset contains three main event types:
 
-| Event type | Number of records |
+| Event Type | Number of Records |
 |---|---:|
 | View | 40,779,399 |
 | Cart | 926,516 |
 | Purchase | 742,849 |
 | **Total** | **42,448,764** |
 
-The event distribution provides a basis for investigating customer interaction and purchase behaviour.
-
 ---
 
-## 5.3 Dataset Variables
+## 6.3 Dataset Variables
 
 | Variable | Description |
 |---|---|
@@ -284,267 +261,217 @@ The event distribution provides a basis for investigating customer interaction a
 
 ---
 
-## 5.4 Dataset Time Period
+## 6.4 Dataset Time Period
 
 The selected dataset covers the complete month of October 2019.
 
-The first recorded event is:
+First recorded event:
 
 `2019-10-01 00:00:00 UTC`
 
-The final recorded event is:
+Final recorded event:
 
 `2019-10-31 23:59:59 UTC`
 
-This makes the dataset suitable for analysing changes in customer activity across the selected month.
+This makes the dataset suitable for analysing changes in e-commerce activity throughout the selected month.
 
 ---
 
-## 5.5 Dataset Size and HDFS Suitability
+# 7. Ethical and Data Governance Considerations
 
-The selected dataset has a file size of approximately 5.67 GB.
+The dataset contains identifier fields such as:
 
-The assignment requires the selected dataset to be large enough to generate at least 3–4 HDFS blocks using a 128 MB block size.
+- `user_id`
+- `user_session`
 
-The selected dataset therefore provides sufficient volume for demonstrating distributed storage using HDFS.
+These fields represent user activity within the e-commerce environment.
 
-During the implementation stage, the actual HDFS block distribution, replication factor and file status will be documented using Hadoop commands and screenshots.
+The project does not attempt to identify individual users.
+
+User-level identifiers are used only where necessary for analytical purposes, and the main findings are presented in aggregated form.
+
+The project also considers missing values and other data quality issues.
+
+The dataset is used only for the purposes of this academic project, and unnecessary identifying information is not disclosed.
 
 ---
 
-# 6. Big Data Technologies
+# 8. Technologies Used
 
-The project will use the following technologies.
+## Hadoop
 
-## Hadoop HDFS
+Hadoop is used as the main Big Data ecosystem for distributed storage and processing.
 
-Hadoop Distributed File System (HDFS) will be used as the distributed storage system for the large-scale e-commerce dataset.
+### HDFS
 
-The dataset will be uploaded into HDFS and its block distribution and replication will be examined.
+Hadoop Distributed File System (HDFS) is used to store the large e-commerce dataset.
+
+The dataset was uploaded to:
+
+`/ecommerce/input/2019-Oct.csv`
+
+The HDFS environment was checked using Hadoop command-line tools, including HDFS listing and filesystem health commands.
+
+---
 
 ## YARN
 
-YARN will be used for resource management and distributed job execution within the Hadoop environment.
+YARN is used as the resource management layer within the Hadoop environment.
 
-## Apache Spark
+The Hadoop environment includes:
 
-Apache Spark will be used for distributed data processing and analytical tasks.
-
-Spark will process the e-commerce dataset within the Hadoop ecosystem and will be used to investigate the research questions.
-
-## Python
-
-Python will be used where appropriate for data preprocessing, analysis, visualisation and potential machine learning tasks.
-
-## GitHub
-
-GitHub will be used to document the project and store source code, commands, Spark scripts, analytical outputs, screenshots and project documentation.
-
-The large original CSV dataset will not be stored in the GitHub repository.
-
----
-
-# 7. Hadoop Architecture
-
-The Hadoop environment will be documented in accordance with the assignment requirements.
-
-The architecture will include:
-
-- NameNode
-- DataNode
-- Secondary NameNode
 - ResourceManager
 - NodeManager
 
-The project will explain the roles of:
-
-- HDFS;
-- YARN;
-- NameNode;
-- DataNode;
-- Secondary NameNode;
-- FSImage;
-- EditLog; and
-- checkpointing.
-
-The selected Hadoop environment and any configuration or setup issues will be documented during implementation.
+YARN provides the framework for managing distributed processing resources.
 
 ---
 
-# 8. Data Ingestion
+## Hadoop MapReduce
 
-The selected dataset will be ingested into HDFS using Hadoop command-line tools or an appropriate Hadoop interface.
+Hadoop Streaming was used to demonstrate a MapReduce processing task.
 
-The data ingestion stage will document:
+The implemented task counts the number of events for each event type:
 
-1. the local dataset;
-2. the HDFS directory structure;
-3. the commands used to upload the dataset;
-4. the resulting HDFS file;
-5. HDFS block distribution;
-6. replication information; and
-7. evidence of successful data ingestion.
+- View
+- Cart
+- Purchase
 
-Screenshots and relevant Hadoop commands will be included in the project evidence.
+The mapper extracts the event type and emits:
 
----
+`event_type    1`
 
-# 9. Distributed Processing
+The reducer aggregates the values for each event type.
 
-The project will perform distributed processing using Apache Spark within the Hadoop ecosystem.
-
-Spark will be used to investigate the defined research questions using distributed transformations and actions.
-
-The main analytical questions are:
-
-### Question 1
-
-How does customer activity vary between product views, cart activity and purchases?
-
-### Question 2
-
-Which product categories and products receive high levels of customer interaction and purchases?
-
-### Question 3
-
-What is the relationship between product interactions and completed purchases?
-
-### Question 4
-
-How does e-commerce activity change over time during October 2019?
-
-The project will document:
-
-- Spark transformations;
-- Spark actions;
-- data processing workflow;
-- relevant queries or code;
-- input and output data;
-- job execution; and
-- how the processing is executed through YARN.
-
-The results obtained from distributed processing will be interpreted from both technical and business perspectives.
+The processing was performed against the dataset stored in HDFS.
 
 ---
 
-# 10. Analytics and Machine Learning
+## Apache Spark
 
-Following distributed processing, the project will perform analytical tasks to identify meaningful patterns in the e-commerce data.
+Apache Spark was used for distributed data processing and analytics.
 
-The analytical process will include:
+The Spark notebook is:
 
-1. Data preprocessing
-2. Data quality assessment
-3. Feature or metric selection
-4. Distributed data processing
-5. Analytical method selection
-6. Evaluation of results
-7. Interpretation of findings
+`spark/Ecommerce_Spark_Analysis.ipynb`
 
-The analysis will focus on customer interaction, product/category performance and purchase behaviour.
+Spark was connected to the Hadoop HDFS environment and loaded the dataset directly from:
 
-Where appropriate, a simple machine learning task may also be implemented using Spark MLlib or Python.
+`hdfs://namenode:9000/ecommerce/input/2019-Oct.csv`
 
-Any machine learning task will be selected based on the characteristics of the dataset and the business problem.
+The Spark analysis included:
 
----
-
-# 11. Visualisation
-
-At least two visualisations will be produced to communicate the analytical findings.
-
-Potential visualisations include:
-
-- customer activity by event type;
-- e-commerce activity over time;
-- product performance;
-- category performance;
-- purchase distribution; and
-- customer interaction and purchase behaviour.
-
-The final visualisations will be selected based on the analytical results.
-
-Each visualisation will be interpreted in relation to the business problem rather than presented only as a descriptive chart.
+- Schema inspection
+- Record counting
+- Event distribution
+- Category analysis
+- Product purchase analysis
+- Average price analysis
+- Daily activity analysis
+- Missing value analysis
+- Spark SQL
+- Machine learning
 
 ---
 
-# 12. Business Insights and Recommendations
+## Spark MLlib
 
-The analytical results will be translated into business insights.
+Spark MLlib was used to implement a simple Logistic Regression classification task.
 
-The project will consider how the findings can support decisions relating to:
+The model uses customer-level behavioural features to investigate whether users were associated with purchase activity.
 
-- marketing;
-- product management;
-- sales;
-- customer engagement; and
-- e-commerce strategy.
+The features include:
 
-The recommendations will be based on evidence obtained from the distributed analysis.
+- View count
+- Cart count
+- Average price
 
-The project will distinguish between analytical findings and business recommendations to ensure that recommendations are supported by the results.
+The target label indicates whether the user had at least one purchase in the analysed sample.
 
----
+Because processing the full 42-million-record dataset at user level caused a resource limitation in the local Spark environment, a 1% sample of the dataset was used for the machine learning experiment.
 
-# 13. Critical Reflection
+The sample contained approximately 425,322 event records.
 
-The project will critically reflect on:
-
-- technical limitations;
-- dataset limitations;
-- data quality;
-- missing values;
-- assumptions;
-- ethical and data governance considerations;
-- scalability;
-- limitations of the selected analytical methods; and
-- limitations of using a historical one-month dataset.
-
-The suitability of Hadoop and Spark for larger-scale e-commerce data will also be considered.
+This limitation is discussed when interpreting the machine learning results.
 
 ---
 
-# 14. Project Structure
+## Python
 
-```text
-E_commerce_Big_Data_Analytics/
-│
-├── README.md
-│
-├── data/
-│   ├── 2019-Oct.csv              # Local dataset - NOT uploaded to GitHub
-│   └── README.md                 # Dataset source and download information
-│
-├── hadoop/
-│   ├── README.md
-│   └── commands/
-│       └── hdfs_commands.txt
-│
-├── spark/
-│   ├── README.md
-│   ├── scripts/
-│   │   └── ecommerce_analysis.py
-│   └── outputs/
-│
-├── analysis/
-│   ├── README.md
-│   └── analytical_results.md
-│
-├── visualisations/
-│   ├── README.md
-│   └── charts/
-│
-├── screenshots/
-│   ├── 01_dataset_file_size.png
-│   ├── 02_dataset_preview.png
-│   ├── 03_dataset_record_count.png
-│   ├── 04_event_type_distribution.png
-│   ├── 05_dataset_date_range.png
-│   ├── 06_unique_users.png
-│   ├── 07_unique_products_categories.png
-│   └── 08_missing_values.png
-│
-├── report/
-│   └── README.md
-│
-└── .gitignore
+Python was used within the Hadoop Streaming and Spark environment for processing, analysis and visualisation.
+
+---
+
+## GitHub
+
+GitHub is used to store:
+
+- Source code
+- Hadoop configuration
+- Hadoop scripts
+- Spark notebook
+- Analysis documentation
+- Visualisations
+- Screenshots
+- Project documentation
+
+The original 5.67 GB CSV dataset is not uploaded to GitHub.
+
+---
+
+# 9. Hadoop Architecture
+
+The Hadoop environment was implemented using the Docker-based configuration provided for the module practical work.
+
+The deployed environment includes:
+
+- NameNode
+- DataNode
+- ResourceManager
+- NodeManager
+- HistoryServer
+
+### NameNode
+
+The NameNode manages HDFS metadata and the filesystem namespace.
+
+### DataNode
+
+The DataNode stores HDFS data blocks.
+
+### ResourceManager
+
+The ResourceManager manages cluster resources and coordinates YARN applications.
+
+### NodeManager
+
+The NodeManager manages resources and tasks on the worker node.
+
+### HistoryServer
+
+The HistoryServer provides information about completed Hadoop jobs.
+
+### Secondary NameNode
+
+The Secondary NameNode role and checkpointing mechanism are discussed conceptually in the project.
+
+The provided Docker teaching configuration did not include a dedicated Secondary NameNode service. Therefore, the practical implementation followed the supplied Hadoop environment while the role of the Secondary NameNode, FSImage, EditLog and checkpointing is explained in the report.
+
+---
+
+# 10. HDFS and Data Ingestion
+
+The large CSV dataset was uploaded into HDFS.
+
+The main HDFS input path is:
+
+`/ecommerce/input/2019-Oct.csv`
+
+An output directory was also created:
+
+`/ecommerce/output`
+
+The HDFS environment was checked using commands such as:
+
+```bash
+hdfs dfs -ls -h /ecommerce/input
